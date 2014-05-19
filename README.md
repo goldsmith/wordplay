@@ -1,6 +1,6 @@
-# wordplay
+# Wordplay
 
-FIXME
+API for cheating at word games, written in Clojure.
 
 ## Prerequisites
 
@@ -16,4 +16,4 @@ To start a web server for the application, run:
 
 ## License
 
-Copyright © 2014 FIXME
+Copyright © 2014 Jonathan Goldsmith
