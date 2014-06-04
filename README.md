@@ -46,7 +46,8 @@ Query parameters:
 | Parameter     | Optional?  | Description                                                                               |
 | :-----------: |:----------:| :---------------------------------------------------------------------------------------- |
 | game          | yes        | The alias of the board game to look the word up in. See *Supported Games* for more info   |
-| tiles         | no         | A 2D array ([row][column]) of tiles, each either one character or a blank denoted by "_". |                                | rack          | yes        | A list of tiles in the player's rack. If empty, no "best_move" will be present.           |
+| tiles         | no         | A 2D array ([row][column]) of tiles, each either one character or a blank denoted by "_". |
+| rack          | yes        | A list of tiles in the player's rack. If empty, no "best_move" will be present.           |
 
 
 
