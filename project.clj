@@ -8,7 +8,7 @@
                  [postgresql "9.1-901.jdbc4"]
                  [cheshire "5.3.1"]]
   :plugins [[lein-ring "0.8.10"]]
-  :ring {:handler wordplay.handler/app}
+  :ring {:handler wordplay.server/app}
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
                                   [ring-mock "0.1.5"]]}}
   :main ^:skip-aot wordplay.server)
