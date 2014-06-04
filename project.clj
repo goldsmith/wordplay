@@ -5,7 +5,8 @@
                  [compojure "1.1.6"]
                  [ring/ring-jetty-adapter "1.2.1"]
                  [org.clojure/java.jdbc "0.3.2"]
-                 [postgresql "9.1-901.jdbc4"]]
+                 [postgresql "9.1-901.jdbc4"]
+                 [cheshire "5.3.1"]]
   :plugins [[lein-ring "0.8.10"]]
   :ring {:handler wordplay.handler/app}
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]

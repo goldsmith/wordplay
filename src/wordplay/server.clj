@@ -1,25 +1,29 @@
 (ns wordplay.server
-  (:use wordplay.views.api
-        wordplay.views.web)
-  (:require [compojure.core :refer [defroutes GET]]
+  (:require [wordplay.api :as api]
+            [wordplay.views :as views]
+            [compojure.core :refer [defroutes GET]]
             [compojure.handler :as handler]
             [compojure.route :as route]
             [ring.adapter.jetty :as ring]))
 
+;; routes
+
 (defroutes web-routes
-  (GET "/" request (home-page request))
+  (GET "/" request (views/home-page request))
   (route/resources "/")
   (route/not-found "Not Found"))
 
 (defroutes api-routes
-  (GET "/word" request (word-page request)))
+  (GET "/words/:word" [word]
+    (api/get word)))
 
 (defroutes all-routes
   web-routes api-routes)
 
+;; server
 
 (def app
-  (handler/site all-routes))
+  (handler/site api-routes))
 
 (defn -main []
-  (ring/run-jetty #'all-routes {:port 8080 :join? false}))
+  (ring/run-jetty #'api-routes {:port 8080 :join? false}))

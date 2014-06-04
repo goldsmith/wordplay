@@ -1,7 +1,7 @@
-(ns wordplay.test.web
+(ns wordplay.test.views
   (:use clojure.test
         ring.mock.request
-        wordplay.web))
+        wordplay.server))
 
 (deftest test-app
   (testing "main route"
